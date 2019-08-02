@@ -1,0 +1,48 @@
+General form of loop
+list='[item1,item2,item3...]'
+for i in $list; do *command* *options* "*files*" ;done
+
+
+Copy files from directory to another
+
+Copy traj files
+#Define x
+x="A B C D E F G H I J K L M N O P Q R S T U V W X"
+for i in $x; do echo "cp /storage/nanosim/phukmv/cate_gs_${i}_training.traj ~/ase/Traj/Cate/dataset" ;done
+
+Copy output files
+#Define x
+x="A B C D....V W X"
+#Define y
+y="000 001 002 ... 198 199"
+for i in $x; do for j in $y; do echo "cp /storage/nanosim/phukmv/cate_gs_${i}_training${j}.out ~/ase/Traj/Cate/dataset" ;done ;done
+
+Deleting lines in a txt file (doesn't work on this command)
+#Define x
+x="4000 4100 4200.. 5000"
+for (( k = 100; k < 5100; k+=100 )); do   a=$(( k+1))'d';   echo "sed -i '$k,$ad' cate_200_gsABCD_16_4_plot.txt"; done
+
+
+for i in $x; do echo "sed -e '$x,$x+3d' < cate_200_gsABCD_10_plot.txt"; done
+
+
+
+
+
+Synax for creating an array of strings
+## declare an array variable
+declare -a arr=("element1" "element2" "element3")
+
+## now loop through the above array
+for i in "${arr[@]}"
+do
+   echo "$i"
+   # or do whatever with individual element of the array
+done
+
+# You can access them using echo "${arr[0]}", "${arr[1]}" also
+
+
+
+
+
