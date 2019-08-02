@@ -1,0 +1,6 @@
+grep 'Hidden' *log8
+grep 'cate_200_gsABCD_20.amp' */*l
+squeue -u phukmv
+sbatch filename
+scancel processID
+sed 's/ABCD/IJKL/g' cate_gs_ABCD_train
