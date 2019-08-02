@@ -1,0 +1,58 @@
+#Change Y range
+set yr [min_val:max_val]
+
+
+
+#produce a png file
+plot .....
+set term png
+set output 'name_of_file'
+replot
+
+
+#plot multiple graphs 1
+plot 'data1.txt' u 1:8, 'data2.txt' u 1:8
+
+
+
+#plot multiple graphs 2
+reset 
+set term pngcairo
+set output 'wall.png'
+set xlabel "Length (meter)"
+set ylabel "error (meter)"
+set style line 1 lt 1 linecolor rgb "yellow" lw 10 pt 1
+set style line 2 lt 1 linecolor rgb "green" lw 10 pt 1
+set style line 3 lt 1 linecolor rgb "blue" lw 10 pt 1
+set datafile separator ","
+set key
+set auto x
+set xtics 1, 2, 9
+set yrange [2:7]
+set grid
+
+set label "(Disabled)" at -.8, 1.8
+plot  "file1.csv" using 1:2 ls 1 title "one" with lines ,\
+  "file2.csv" using 1:2 ls 2 title "two" with lines ,\
+  "file3.csv" using 1:2 ls 3 title "three" with lines
+set output
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+plot "comp1" using 2:5 title "cate_gs_ABCD_comp_EFGH", "comp2" using 2:5 title "cate_gs_ABCD_comp_IJKLMNOP",  "comp3" using 2:5 title "cate_gs_ABCD_comp_QRSTUVWX"
+
